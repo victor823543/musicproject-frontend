@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .bg-mp {
+        @apply bg-zinc-200 dark:bg-gradient-to-br dark:from-black dark:to-slate-800
+    }
+}
+
+@layer components {
+    .checkbox-label {
+        @apply flex items-center gap-1 py-1 px-2 border-2 border-teal-600 shadow-sm shadow-teal-500/30 max-sm:text-sm 
+    }
+
+    .teal-label {
+        @apply max-sm:text-2xl max-xs:text-xl text-3xl text-center font-extralight text-zinc-50 lg:text-teal-950 text-shadow-lg shadow-teal-800 dark:text-teal-600
+    }
+
+    .teal-select {
+        @apply bg-slate-800 text-white dark:text-teal-200 font-light text-lg sm:text-2xl lg:text-3xl max-xs:w-fit py-2 px-4 rounded-sm shadow-sm shadow-teal-500 dark:shadow-md dark:shadow-teal-300
+    }
+    .modal-et {
+        @apply bg-zinc-200/50 dark:bg-slate-700/30 dark:text-sky-200 max-h-full xsPlus:px-8 py-8 rounded-lg shadow-md overflow-y-scroll
+    }
+    
+}
+
+@layer utilities {
+    .btn-s {
+        @apply bg-teal-700/10 py-2 px-4 font-light border-2 border-teal-600 rounded-md hover:bg-zinc-600/20 max-xs:text-sm
+    }
+    .btn-h {
+        @apply bg-slate-600/30 ring-2 ring-slate-900 rounded-lg py-2 px-4 w-44 mb-4 max-xs:mb-2 text-balance font-light max-xs:scale-75
+    }
+    .btn-w {
+        @apply max-xs:text-sm bg-zinc-200 ring-2 ring-zinc-500 py-2 px-4 rounded-md text-black text-lg font-montserrat font-light
+    }
+    .btn-e {
+        @apply py-2 px-4 ring-2 rounded-md shadow-md
+    }
+    .red-btn {
+        @apply bg-red-500/20 hover:bg-red-600/40 px-4 py-2 shadow-md shadow-red-500 font-light
+    }
+    .settings-btn {
+        @apply dark:text-black hover:bg-teal-500/50 ring-2 ring-teal-800 py-2 px-4 rounded-md shadow-md text-xl font-montserrat font-light
+    }
+    .guess-btn {
+        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 max-xs:py-1 max-xs:px-1 rounded-md shadow-md text-xl max-xs:text-xs max-sm:text-base font-montserrat font-light
+    }
+    .show-guess-btn {
+        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 max-xs:py-1 max-xs:px-1 rounded-md shadow-md text-xl max-xs:text-xs max-sm:text-base font-montserrat font-light
+    }
+    .h1-et {
+        @apply text-3xl max-xs:text-xl max-sm:text-2xl font-montserrat text-center mb-6 max-xs:mb-2 dark:text-sky-100
+    }
+    .modal-btn {
+        @apply dark:text-sky-100 dark:text-shadow dark:shadow-sky-400 ring-2 ring-blue-800/60 dark:ring-blue-800 py-2 px-4 max-xs:py-1 max-xs:px-3 rounded-md shadow-md dark:shadow-sm text-xl max-sm:text-base max-xs:text-sm font-montserrat font-light
+    }
+    
+}
