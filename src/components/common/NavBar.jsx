@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ToggleTheme from './ToggleTheme'
-import HamburgerIcon from '../assets/icons/burger-menu.svg'
-import HamburgerWhiteIcon from '../assets/icons/burger-menu-white.svg'
-import CloseButton from '../assets/icons/close-button.svg'
-import CloseButtonWhite from '../assets/icons/close-button-white.svg'
+import HamburgerIcon from '../../assets/icons/burger-menu.svg'
+import HamburgerWhiteIcon from '../../assets/icons/burger-menu-white.svg'
+import CloseButton from '../../assets/icons/close-button.svg'
+import CloseButtonWhite from '../../assets/icons/close-button-white.svg'
 import { useNavigate } from 'react-router-dom'
 
 const SideBar = ({isOpen, closeSidebar, navObject, isAuthenticated, logout, themeComponent}) => {
     
     return (
-        <div className={`fixed inset-y-0 right-0 bg-zinc-100 dark:bg-black w-64 p-4 z-40 ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`fixed inset-y-0 right-0 bg-zinc-100 dark:bg-black w-64 h-fit p-4 z-40 ${isOpen ? 'block' : 'hidden'}`}>
             <ul className=' flex flex-col gap-6'>
                 {Object.entries(navObject).map(([name, route], index) =>
                     <li key={index}>

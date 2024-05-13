@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ACCESS_TOKEN, REFRESH_TOKEN, DOMAIN } from '../constants'
+import { ACCESS_TOKEN, REFRESH_TOKEN, DOMAIN } from '../../constants'
 import { useNavigate } from 'react-router-dom'
 
 const LogIn = (props) => {

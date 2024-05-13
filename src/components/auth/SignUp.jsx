@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { DOMAIN, ACCESS_TOKEN, REFRESH_TOKEN } from '../constants'
+import { DOMAIN, ACCESS_TOKEN, REFRESH_TOKEN } from '../../constants'
 
 const SignUp = (props) => {
     const [inputData, setInputData] = useState({username: '', password: '', email: ''})

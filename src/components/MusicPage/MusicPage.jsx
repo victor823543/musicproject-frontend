@@ -1,5 +1,3 @@
-
-import arrowDown from '../../assets/icons/arrow-down.svg'
 import { ACCESS_TOKEN, DOMAIN } from '../../constants'
 import MusicPageChords from './MusicPageChords'
 import MusicPageForm from './MusicPageForm'
@@ -157,10 +155,6 @@ const MusicPage = (props) => {
         })
     }
 
-    const handleEditClick = () => {
-        setEditMode(!editMode)
-    }
-
     const handleSelectKeyChange = (e) => {
         setParams((prev) => {
             return ({
@@ -260,7 +254,7 @@ const MusicPage = (props) => {
                     <div className='w-full h-20 lg:hidden'></div>
                     <div className='absolute w-full h-full bg-zinc-200 inset-0 -z-20'></div>
                     <div className='lg:w-1/2 h-full flex flex-col justify-between'>
-                        <MusicPageChords song={song} handleChordClick={handleChordClick} chordPlaying={chordPlaying} changeChord={changeChord} editMode={editMode} handleEditClick={handleEditClick} chordReplacements={chordReplacements}/>
+                        <MusicPageChords song={song} handleChordClick={handleChordClick} chordPlaying={chordPlaying} changeChord={changeChord} editMode={editMode} handleEditClick={() => setEditMode(!editMode)} chordReplacements={chordReplacements}/>
                         {props.isAuthenticated && <button onClick={fetchStoreSong} className='btn-s w-fit mx-auto mb-2 relative bottom-5'>Store Song</button>}
                         <MusicPageOptions song={song} handleCreateClick={handleCreateNewClick} handleTransposeClick={handleTransposeClick}/>
                     </div>
@@ -299,7 +293,7 @@ const MusicPage = (props) => {
 
                         
 
-                        <MusicPageChords song={song} handleChordClick={handleChordClick} chordPlaying={chordPlaying} changeChord={changeChord}/>
+                        <MusicPageChords song={song} handleChordClick={handleChordClick} chordPlaying={chordPlaying} changeChord={changeChord} editMode={editMode} handleEditClick={() => setEditMode(!editMode)} chordReplacements={chordReplacements}/>
                         <div className='flex justify-center'>
                             <button className='btn-s w-fit' onClick={toggleModal}>Change song</button>
                         </div>

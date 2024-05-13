@@ -30,7 +30,7 @@ ul {
 }
 
 /*
-
+OLD (without percentage)
 ul {
     display: flex;
     flex-direction: row;

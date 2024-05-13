@@ -6,7 +6,7 @@ import Chords from "./Chords"
 import Progressions from "./Progressions"
 import ProgressionProgress from './ProgressionProgress'
 import { Routes, Route, Link} from 'react-router-dom'
-import ProtectedRoute from "../ProtectedRoute"
+import ProtectedRoute from "../auth/ProtectedRoute"
 
 const EarTraining = (props) => {
    

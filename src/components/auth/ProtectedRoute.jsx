@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-import { REFRESH_TOKEN, ACCESS_TOKEN, DOMAIN } from "../constants";
+import { REFRESH_TOKEN, ACCESS_TOKEN, DOMAIN } from "../../constants";
 import { useState, useEffect } from "react";
 
 

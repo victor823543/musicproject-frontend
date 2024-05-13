@@ -14,11 +14,11 @@
     }
 
     .teal-label {
-        @apply max-sm:text-2xl max-xs:text-xl text-3xl text-center font-extralight text-zinc-50 lg:text-teal-950 text-shadow-lg shadow-teal-800 dark:text-teal-600
+        @apply max-sm:text-3xl max-lg:text-4xl text-3xl text-center font-extralight text-zinc-50 lg:text-teal-950 text-shadow-lg shadow-teal-800 dark:text-teal-500
     }
 
     .teal-select {
-        @apply bg-slate-800 text-white dark:text-teal-200 font-light text-lg sm:text-2xl lg:text-3xl max-xs:w-fit py-2 px-4 rounded-sm shadow-sm shadow-teal-500 dark:shadow-md dark:shadow-teal-300
+        @apply bg-slate-800 text-white dark:text-teal-200 font-light text-2xl sm:text-4xl lg:text-3xl max-lg:py-3 max-lg:px-6 py-2 px-4 rounded-sm shadow-sm shadow-teal-500 dark:shadow-md dark:shadow-teal-300
     }
     .modal-et {
         @apply bg-zinc-200/50 dark:bg-slate-700/30 dark:text-sky-200 max-h-full xsPlus:px-8 py-8 rounded-lg shadow-md overflow-y-scroll

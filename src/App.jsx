@@ -1,11 +1,11 @@
 
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
-import LoginPage from './components/LoginPage';
+import SignUp from './components/auth/SignUp';
+import LogIn from './components/auth/LogIn';
+import LoginPage from './components/auth/LoginPage';
 import HomePage from './components/HomePage/HomePage';
 import HomePageGuest from './components/HomePageGuest/HomePageGuest';
 import HomePageAuth from './components/HomePageAuth/HomePageAuth';
-import NavBar from './components/NavBar';
+import NavBar from './components/common/NavBar';
 import MusicPage from './components/MusicPage/MusicPage';
 import EarTraining from './components/EarTraining/EarTraining';
 import './App.css';

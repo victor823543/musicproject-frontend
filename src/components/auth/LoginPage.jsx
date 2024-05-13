@@ -1,5 +1,5 @@
-import image_dark_piano from '../assets/images/dark_grand.jpeg'
-import image_white_grand from '../assets/images/white_grand.jpeg'
+import image_dark_piano from '../../assets/images/dark_grand.jpeg'
+import image_white_grand from '../../assets/images/white_grand.jpeg'
 import LoginModal from './LoginModal'
 
 const LoginPage = (props) => {

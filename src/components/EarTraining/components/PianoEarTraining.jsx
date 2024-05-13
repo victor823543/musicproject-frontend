@@ -1,4 +1,4 @@
-import '../MusicPage/piano.css'
+import '../../MusicPage/piano.css'
 import { useState } from 'react'
 
 const PianoEarTraining = (props) => {
