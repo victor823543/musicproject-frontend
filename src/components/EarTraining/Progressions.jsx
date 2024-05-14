@@ -64,13 +64,13 @@ const Progressions = () => {
                         <h1 className='h1-et'>Take a guess</h1>
                         <div className='flex flex-wrap justify-center gap-4'>
                             {chordNames.map((chord) => 
-                                <div onClick={() => handleGuessClick(chord)} key={chord['roman']} className={`${defaultColor} guess-btn`}>{showRoman ? chord['roman'] : chord['name']}</div>
+                                <div onClick={() => handleGuessClick(chord)} key={chord['roman']} className={`${defaultColor} guess-btn-prg`}>{showRoman ? chord['roman'] : chord['name']}</div>
                             )}
                         </div>
                     </div>
                     
                 </div>
-                <div className={`  absolute top-1/3 right-0  overflow-hidden`}>
+                <div className={`absolute top-1/3 max-sm:top-2/3 right-0  overflow-hidden`}>
                     <div className='bg-zinc-200/40 dark:bg-slate-700/40 flex flex-col gap-5 py-3'>
                         <div className='flex flex-col items-center'>
                             <svg onClick={handleTempoMinus} xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-10 h-10 dark:stroke-white">

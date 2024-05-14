@@ -46,16 +46,16 @@
         @apply dark:text-black hover:bg-teal-500/50 ring-2 ring-teal-800 py-2 px-4 rounded-md shadow-md text-xl font-montserrat font-light
     }
     .guess-btn {
-        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 max-xs:py-1 max-xs:px-1 rounded-md shadow-md text-xl max-xs:text-xs max-sm:text-base font-montserrat font-light
+        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 rounded-md shadow-md text-xl max-sm:text-lg font-montserrat font-light
     }
-    .show-guess-btn {
-        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 max-xs:py-1 max-xs:px-1 rounded-md shadow-md text-xl max-xs:text-xs max-sm:text-base font-montserrat font-light
+    .guess-btn-prg {
+        @apply dark:text-cyan-100 dark:text-shadow dark:shadow-cyan-400 dark:ring-blue-500 dark:hover:bg-sky-400/30 hover:bg-blue-500/30 ring-blue-900 text-blue-900 shadow-blue-400 ring-2 py-2 px-4 rounded-md shadow-md text-3xl font-montserrat font-light
     }
     .h1-et {
-        @apply text-3xl max-xs:text-xl max-sm:text-2xl font-montserrat text-center mb-6 max-xs:mb-2 dark:text-sky-100
+        @apply text-3xl max-sm:text-2xl font-montserrat text-center mb-6 max-xs:mb-2 dark:text-sky-100
     }
     .modal-btn {
-        @apply dark:text-sky-100 dark:text-shadow dark:shadow-sky-400 ring-2 ring-blue-800/60 dark:ring-blue-800 py-2 px-4 max-xs:py-1 max-xs:px-3 rounded-md shadow-md dark:shadow-sm text-xl max-sm:text-base max-xs:text-sm font-montserrat font-light
+        @apply dark:text-sky-100 dark:text-shadow dark:shadow-sky-400 ring-2 ring-blue-800/60 dark:ring-blue-800 py-2 px-4 rounded-md shadow-md dark:shadow-sm text-xl max-sm:text-base font-montserrat font-light
     }
     
 }

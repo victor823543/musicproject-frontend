@@ -5,8 +5,8 @@ const SettingsPage = ({gridChildren, singleChildren, handleStartClick}) => {
     <div className='fixed top-0 left-0 w-full h-full flex items-center justify-center bg-zinc-800 bg-opacity-50 z-10 pt-20 pb-4 '>
             <div className='modal-et hideScrollbar'>
                 <div className='mb-6 max-xs:mb-3 px-4'>
-                    <h1 className='text-center text-5xl max-sm:text-3xl max-xs:text-2xl font-montserrat mb-3'>Custom Settings</h1>
-                    <h3 className='text-center text-xl max-sm:text-lg max-xs:text-sm font-montserrat font-light'>Create your own custiomizable session</h3>
+                    <h1 className='text-center text-5xl max-sm:text-3xl font-montserrat mb-3'>Custom Settings</h1>
+                    <h3 className='text-center text-xl max-sm:text-lg max-xs:text-base font-montserrat font-light'>Create your own custiomizable session</h3>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-y-8 relative'>
                     {gridChildren}

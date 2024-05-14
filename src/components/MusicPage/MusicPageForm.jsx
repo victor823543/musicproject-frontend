@@ -4,7 +4,7 @@ import image_dark_piano from '../../assets/images/dark_grand.jpeg'
 const MusicPageForm = (props) => {
     const keys = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'Db', 'Eb', 'Gb', 'Ab', 'Bb']
     return (
-        <div className='h-screen w-screen flex max-lg:justify-center max-lg:items-center'>
+        <div className='fixed h-screen w-screen flex max-lg:justify-center max-lg:items-center'>
             <div style={{backgroundImage: `url(${image_grand_piano})`}} className="dark:hidden max-lg:absolute max-lg:bg-cover max-lg:inset-0 -z-10 bg-center bg-auto w-full lg:w-1/2"></div>
             <div style={{backgroundImage: `url(${image_dark_piano})`}} className="dark:block hidden max-lg:absolute max-lg:bg-cover max-lg:inset-0 -z-10 bg-center bg-auto w-full lg:w-1/2"></div>
             <div className='absolute w-full h-full bg-zinc-200 dark:bg-gradient-to-br dark:from-black dark:to-slate-800 inset-0 -z-20'></div>

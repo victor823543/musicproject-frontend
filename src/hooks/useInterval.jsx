@@ -102,7 +102,7 @@ const useInterval = (progressMode=false) => {
       }
   }
   
-  const fetchUpdateStats = (intervalStats) => {
+  const fetchUpdateStats = (intervalStats, progressStats=null) => {
       const interval_length = Object.keys(intervalSession['intervals']).length
       const paramsOut = {}
       intervalNames.forEach(interval => {
@@ -126,7 +126,7 @@ const useInterval = (progressMode=false) => {
       const dataToSend = {
           'type': 'interval',
           'sessionStats': paramsOut,
-          'progressStats': null,
+          'progressStats': progressStats,
       }
 
       const options = {

@@ -45,16 +45,16 @@ const ProgressionProgress = (props) => {
     >
         {showStart &&
             <div className='fixed inset-0 cover bg-slate-700/40 flex flex-col justify-center items-center dark:text-sky-200/80'>
-                <div className='bg-zinc-200 dark:bg-slate-950 p-20 flex flex-col gap-10 items-center rounded-xl shadow-xl'>
+                <div className='bg-zinc-200 dark:bg-slate-950 p-20 flex flex-col gap-10 items-center rounded-xl shadow-xl overflow-y-scroll hideScrollbar'>
                     <h1 className='font-montserrat text-3xl text-center'>Progress mode</h1>
                     <div className='flex gap-10'>
-                        <div className='flex flex-col items-center gap-3'>
+                        <div className='relative flex flex-col items-center gap-3'>
                             <h2 className='font-montserrat text-xl'>Total progress</h2>
                             <ProgressCircle value={progressionSession?.totalProgress} size="lg" showAnimation>
                                 <span className="text-sm font-medium font-montserrat text-slate-700">{`${progressionSession?.totalProgress}%`}</span>
                             </ProgressCircle>
                         </div>
-                        <div className='flex flex-col items-center gap-3'>
+                        <div className='relative flex flex-col items-center gap-3'>
                             <h2 className='font-montserrat text-xl'>Session progress</h2>
                             <ProgressCircle value={progressionSession?.sessionBest} size="lg" showAnimation>
                                 <span className="text-sm font-medium font-montserrat text-slate-700">{`${progressionSession?.sessionBest}%`}</span>
@@ -120,13 +120,13 @@ const ProgressionProgress = (props) => {
                         <h1 className='h1-et'>Take a guess</h1>
                         <div className='flex flex-wrap justify-center gap-4'>
                             {chordNames.map((chord) => 
-                                <div onClick={() => handleGuessClick(chord)} key={chord['roman']} className={`${defaultColor} guess-btn`}>{showRoman ? chord['roman'] : chord['name']}</div>
+                                <div onClick={() => handleGuessClick(chord)} key={chord['roman']} className={`${defaultColor} guess-btn-prg`}>{showRoman ? chord['roman'] : chord['name']}</div>
                             )}
                         </div>
                     </div>
                     
                 </div>
-                <div className={`  absolute top-1/3 right-0  overflow-hidden`}>
+                <div className={`absolute top-1/3 max-sm:top-2/3 right-0 overflow-hidden`}>
                     <div className='bg-zinc-200/40 dark:bg-slate-700/40 flex flex-col gap-5 py-3'>
                         <div className='flex flex-col items-center'>
                             <svg onClick={handleTempoMinus} xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-10 h-10 dark:stroke-white">
