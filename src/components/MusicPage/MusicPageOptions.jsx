@@ -21,16 +21,15 @@ const MusicPageOptions = (props) => {
 
     const keys = ['C', 'D', 'E', 'F', 'G', 'A', 'B', 'Db', 'Eb', 'Gb', 'Ab', 'Bb']
 
-    const currentColor = 'bg-teal-600/60 dark:bg-teal-600'
+    const currentColor = 'bg-sky-600/60 dark:bg-sky-600'
     const defaultColor = 'bg-slate-500/20'
-    const clickedColor = 'bg-cyan-300/60 dark:bg-cyan-500/70'
+    const clickedColor = 'bg-amber-300/60 dark:bg-amber-400/60'
 
     const handleKeyClick = (keyClickedOn) => {
         setClickedKey(keyClickedOn)
         if ((clickedQuality === props.song['quality']) && (keyClickedOn === props.song['key'])) {
-            setShowButton(false)
+            setShowTranspose(false)
         } else {
-            setShowButton(true)
             setShowTranspose(true)
         }
         if (!(clickedQuality === props.song['quality'])) {
@@ -64,7 +63,7 @@ const MusicPageOptions = (props) => {
     }
 
     return (
-        <div className='flex flex-col gap-4 px-4 max-xs:px-4'>
+        <div className='flex flex-col gap-4 px-4 max-xs:px-4 '>
             <div className='flex max-xs:text-base max-sm:text-lg text-2xl max-xs:gap-2 gap-4 flex-wrap font-light'>
                 {keys.map((key, index)=> 
                     <div onClick={() => handleKeyClick(key)}
@@ -84,7 +83,7 @@ const MusicPageOptions = (props) => {
                 </form>
             </div>
             <div>
-                <button className='max-xs:text-sm max-xs:px-2 bg-teal-700/10 py-2 px-4 font-light border-2 border-teal-600 rounded-md hover:bg-zinc-600/20' onClick={() => setShowAdvanced(!showAdvanced)}>{showAdvanced ? 'Hide advanced settings' : 'Show advanced settings' }</button>
+                <button className='btn-s' onClick={() => setShowAdvanced(!showAdvanced)}>{showAdvanced ? 'Hide advanced settings' : 'Show advanced settings' }</button>
             </div>
             <div>
                 {showAdvanced && 
@@ -127,7 +126,7 @@ const MusicPageOptions = (props) => {
             
             
             
-            {showButton &&
+            
             <div className='flex gap-2 px-4'>
                 <button className='btn-s' onClick={() => props.handleCreateClick({ key: clickedKey, quality: clickedQuality, length: clickedLength, additions: isChecked})}>Create New</button>
                 {showTranspose &&
@@ -135,7 +134,7 @@ const MusicPageOptions = (props) => {
                 }
                 
             </div>
-            }
+            
             
         </div>
     )

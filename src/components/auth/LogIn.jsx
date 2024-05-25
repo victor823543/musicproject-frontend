@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ACCESS_TOKEN, REFRESH_TOKEN, DOMAIN } from '../../constants'
 import { useNavigate } from 'react-router-dom'
 
-const LogIn = (props) => {
+const LogIn = ({handleAuthentication, navigatePath}) => {
     const [inputData, setInputData] = useState({username: '', password: ''})
     const navigate = useNavigate()
 
@@ -30,8 +30,8 @@ const LogIn = (props) => {
             setInputData({username: '', password: ''})
             localStorage.setItem(ACCESS_TOKEN, data.access)
             localStorage.setItem(REFRESH_TOKEN, data.refresh)
-            props.handleAuthentication()
-            navigate(props.navigate)
+            handleAuthentication()
+            navigate(navigatePath)
         }) 
         .catch(err => console.log(err))
     }
@@ -58,11 +58,11 @@ const LogIn = (props) => {
             <form className='flex flex-col gap-4 text-end'>
                 <div className='login-div'>
                     <label className=' font-montserrat font-light' htmlFor="logInUsername">Username: </label>
-                    <input className='text-black bg-zinc-100/30 px-1' type="text" id='logInUsername' value={inputData['username']} onChange={handleUsernameChange} />
+                    <input className='text-black dark:text-zinc-200 bg-zinc-100/30 px-1' type="text" id='logInUsername' value={inputData['username']} onChange={handleUsernameChange} />
                 </div>
                 <div className='login-div'>
                     <label className=' font-montserrat font-light' htmlFor="logInPassword">Password: </label>
-                    <input className='text-black bg-zinc-100/30 px-1 ' type="password" id='logInPassword' value={inputData['password']} onChange={handlePasswordChange} />
+                    <input className='text-black dark:text-zinc-200 bg-zinc-100/30 px-1 ' type="password" id='logInPassword' value={inputData['password']} onChange={handlePasswordChange} />
                 </div>
                 <div className='flex justify-center'>
                     <button className=' bg-slate-200 w-fit py-2 px-4 text-black font-montserrat font-light text-sm rounded-md ring-2 ring-slate-400' type='submit' onClick={handleSubmit}>Log in</button>

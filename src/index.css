@@ -10,15 +10,19 @@
 
 @layer components {
     .checkbox-label {
-        @apply flex items-center gap-1 py-1 px-2 border-2 border-teal-600 shadow-sm shadow-teal-500/30 max-sm:text-sm 
+        @apply flex items-center gap-1 py-1 px-2 border-2 border-sky-600 shadow-sm shadow-sky-500/30 max-sm:text-sm 
     }
 
     .teal-label {
-        @apply max-sm:text-3xl max-lg:text-4xl text-3xl text-center font-extralight text-zinc-50 lg:text-teal-950 text-shadow-lg shadow-teal-800 dark:text-teal-500
+        @apply max-sm:text-3xl max-lg:text-4xl text-3xl text-center dark:font-extralight text-sky-700 dark:text-shadow shadow-sky-800 dark:text-sky-500
+    }
+
+    .intro-label {
+        @apply max-sm:text-3xl max-lg:text-4xl text-3xl text-center font-extralight text-sky-950 text-shadow-lg shadow-sky-800 dark:text-sky-500
     }
 
     .teal-select {
-        @apply bg-slate-800 text-white dark:text-teal-200 font-light text-2xl sm:text-4xl lg:text-3xl max-lg:py-3 max-lg:px-6 py-2 px-4 rounded-sm shadow-sm shadow-teal-500 dark:shadow-md dark:shadow-teal-300
+        @apply bg-sky-600/70 dark:bg-slate-800 text-white dark:text-sky-200 font-light text-2xl sm:text-4xl lg:text-3xl max-lg:py-3 py-2 pl-4 pr-12 rounded-md dark:rounded-sm shadow-sm shadow-sky-500 dark:shadow-md dark:shadow-sky-300
     }
     .modal-et {
         @apply bg-zinc-200/50 dark:bg-slate-700/30 dark:text-sky-200 max-h-full xsPlus:px-8 py-8 rounded-lg shadow-md overflow-y-scroll
@@ -28,13 +32,13 @@
 
 @layer utilities {
     .btn-s {
-        @apply bg-teal-700/10 py-2 px-4 font-light border-2 border-teal-600 rounded-md hover:bg-zinc-600/20 max-xs:text-sm
+        @apply bg-sky-600/30 dark:bg-sky-500/10 py-2 px-4 font-light border-2 border-sky-600 rounded-md hover:bg-sky-600/40 dark:hover:bg-sky-400/30 hover:scale-105 transition-all max-xs:text-sm
     }
     .btn-h {
-        @apply bg-slate-600/30 ring-2 ring-slate-900 rounded-lg py-2 px-4 w-44 mb-4 max-xs:mb-2 text-balance font-light max-xs:scale-75
+        @apply bg-gradient-to-r from-slate-200 to-sky-700/50 dark:bg-gradient-to-r dark:from-black dark:to-sky-800/70 ring-2 ring-slate-900 dark:ring-slate-200/80 rounded-lg py-2 px-4 w-44 mb-4 max-xs:mb-2 xl:text-lg text-balance font-montserrat max-xs:scale-75
     }
     .btn-w {
-        @apply max-xs:text-sm bg-zinc-200 ring-2 ring-zinc-500 py-2 px-4 rounded-md text-black text-lg font-montserrat font-light
+        @apply max-xs:text-sm bg-zinc-200/70 ring-2 ring-zinc-500 py-2 px-4 rounded-md text-black text-lg font-montserrat font-light shadow-lg
     }
     .btn-e {
         @apply py-2 px-4 ring-2 rounded-md shadow-md

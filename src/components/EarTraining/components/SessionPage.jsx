@@ -24,7 +24,7 @@ const SessionPage = ({children, session, refMidi}) => {
         <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 bg-gradient-to-r from-white dark:from-black from-2% -z-20" />
         <div className='dark:lg:hidden fixed bg-cover inset-0 -z-10 backdrop-blur-sm'></div>
     
-        <div className='fixed bg-cover inset-0 -z-40 bg-white dark:bg-black'></div>
+        <div className='fixed bg-cover inset-0 -z-40 bg-zinc-200 dark:bg-black'></div>
 
 
 

@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 const useAuthentication = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [username, setUsername] = useState('')
 
     
         const checkAuthentication =  async () => {
@@ -25,7 +24,6 @@ const useAuthentication = () => {
             if (decodedToken.exp > currentTime) {
                 console.log(decodedToken)
                 setIsAuthenticated(true);
-                setUsername(decodedToken.username)
                 setLoading(false);
                 return;
             }
@@ -58,8 +56,8 @@ const useAuthentication = () => {
             const data = await response.json();
             localStorage.setItem(ACCESS_TOKEN, data.access);
             decodedToken = jwtDecode(data.access)
+            console.log(decodedToken)
             setIsAuthenticated(true);
-            setUsername(decodedToken.username)
             setLoading(false);
         } catch (error) {
             console.error('Error checking authentication:', error);
@@ -76,7 +74,7 @@ const useAuthentication = () => {
         };
 
     return (
-        {isAuthenticated, loading, username, refreshAuthentication}
+        {isAuthenticated, loading, refreshAuthentication}
     )
 }
 

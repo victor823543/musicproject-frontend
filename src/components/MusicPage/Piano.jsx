@@ -31,12 +31,12 @@ const Piano = (props) => {
                 const whiteHeight = `${props.pianoW*0.27}px`
                 const blackHeight = `${props.pianoW*0.175}px`
                 const blackKeyStyles = {
-                    backgroundColor: props.showChord.includes(note) ? 'teal' : 'black',
+                    backgroundColor: props.showChord.includes(note) ? 'rgb(2 132 199)' : 'black',
                     left: decidePosition[interval] + (octave * 50) + '%',
                     height: blackHeight,
                 }
                 const whiteKeyStyles = {
-                    backgroundColor: props.showChord.includes(note) ? 'teal' : 'white',
+                    backgroundColor: props.showChord.includes(note) ? 'rgb(2 132 199)' : 'white',
                     height: whiteHeight,
                 }
 

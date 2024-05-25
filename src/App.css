@@ -22,7 +22,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: rgba(15, 118, 110, 0.7);
+  background-color: rgba(15, 84, 118, 0.7);
   border-color: rgb(15, 23, 42);
 }
 
@@ -41,23 +41,23 @@ input[type=range]::-webkit-slider-runnable-track {
   cursor: pointer;
   animate: 0.2s;
   box-shadow: 1px 1px 1px #949494;
-  background: #6C9CA3;
+  background: #1f5ba984;
   border-radius: 5px;
-  border: 1px solid #4BCCD5;
+  border: 1px solid #267cf5;
 }
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 3px 3px 3px #1AA5AA;
-  border: 2px solid #50E5BD;
+  box-shadow: 3px 3px 3px #2e98da;
+  border: 2px solid #0a6abd;
   height: 28px;
   width: 28px;
   border-radius: 23px;
-  background: #80CFCC;
+  background: #36a1e3;
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -8.5px;
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #6C9CA3;
+  background: #28577d;
 }
 input[type=range]::-moz-range-track {
   width: 100%;
@@ -110,7 +110,7 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: #6C9CA3;
+  background: #0d6497;
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #6C9CA3;

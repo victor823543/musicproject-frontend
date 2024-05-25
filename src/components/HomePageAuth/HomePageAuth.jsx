@@ -132,8 +132,9 @@ const HomePageAuth = (props) => {
             <div className='w-full min-h-20 bg-transparent'></div>
             <div style={{backgroundImage: `url(${image_white_grand})`}} className='dark:hidden fixed bg-cover inset-0 bg-center -z-20 '></div>
             <div style={{backgroundImage: `url(${image_dark_grand})`}} className='dark:block hidden fixed bg-cover inset-0 bg-center -z-20 '></div>
-            <div className=' fixed bg-cover inset-0 -z-10 backdrop-blur-md'></div>
-            <h1 className='text-center text-3xl xs:text-4xl lg:text-5xl xl:text-6xl font-montserrat font-light text-shadow-lg shadow-teal-800/60 dark:text-shadow dark:shadow-sky-400 my-10'>Welcome {props.username}</h1>
+            <div className=' fixed bg-cover inset-0 -z-10 bg-gradient-to-br from-slate-100/60 to-sky-300  dark:from-black dark:to-sky-600/50 '></div>
+            
+            <h1 className='text-center text-3xl xs:text-4xl lg:text-5xl xl:text-7xl font-montserrat dark:font-light text-shadow-md shadow-sky-800/60 dark:text-shadow dark:shadow-sky-400 my-10'>Welcome {props.username}</h1>
             <div className='mt-10'>
                 <p className='font-montserrat text-lg text-center'>Get started by creating a song or practicing eartraining</p>
                 <div className='flex justify-evenly mt-4'>

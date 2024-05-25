@@ -109,13 +109,13 @@ const FullProgress = (props) => {
                     <div className='sm:hidden absolute left-0 h-full flex items-center justify-center'>
                         <RiArrowLeftWideLine 
                             size={64}
-                            className='fill-white cursor-pointer'
+                            className={`fill-white cursor-pointer ${openLevel && 'rotate-180'}`}
                             onClick={() => setOpenLevel(!openLevel)}
                         />
                     </div>
                     <div className='flex flex-col gap-4 h-full w-full justify-center hideScrollbar max-sm:overflow-y-scroll max-sm:pt-20'>
                         <h1 className='text-center text-3xl font-montserrat'>{`Level ${showLevel}`}</h1>
-                        <div className='w-full h-1 border-b-[1px] border-slate-400'></div>
+                        <div className={`${openLevel ? 'block' : 'hidden'} w-full h-1 border-b-[1px] border-slate-400`}></div>
                         <div className='flex flex-col items-center gap-3'>
                             <h2 className='font-montserrat text-xl text-center'>Session progress</h2>
                             <ProgressCircle className='relative' value={props.levelStats[showLevel].bestScorePercent} size="xl" strokeWidth={16} showAnimation>

@@ -7,9 +7,9 @@ const MusicPageAudio = (props) => {
     const [currentOption, setCurrentOption] = useState({chords: null, base: null, tempo: 2})
     const [clickedOption, setClickedOption] = useState({chords: null, base: null, tempo: 2})
     
-    const currentColor = 'bg-teal-600/60 dark:bg-teal-600'
+    const currentColor = 'bg-blue-600/60 dark:bg-blue-600'
     const defaultColor = 'bg-slate-500/20'
-    const clickedColor = 'bg-cyan-300/60 dark:bg-cyan-500/70'
+    const clickedColor = 'bg-sky-300/60 dark:bg-sky-500/70'
 
     const options = ['Basic', 'Arpeggio']
     const baseOptions = ['None', 'Basic', 'Double', 'Arpeggio']

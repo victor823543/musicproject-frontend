@@ -18,10 +18,10 @@ const MusicPageChords = (props) => {
         const chordComponents = Object.entries(props.verse).map(([key, chord], index) => 
             {
                 
-                const border = 'border-l-2 border-teal-600'
+                const border = 'border-l-2 border-sky-600'
                 
                 return (
-                    <li key={key} className={`max-xs:text-lg max-xsPlus:text-2xl text-3xl font-light hover:text-teal-600 w-full ${(index > 0 && border)} text-center py-2`} onClick={() => handleChordClick(chord['name'], index, props.verseIndex)} style={(props.chordPlaying === index + (props.verseIndex * 4)) ? {color: clickedColor, fontWeight: 700, fontSize: '34px'} : {backgroundColor: null}} >
+                    <li key={key} className={`max-xs:text-lg max-xsPlus:text-2xl text-3xl font-light hover:text-sky-600 w-full ${(index > 0 && border)} text-center py-2`} onClick={() => handleChordClick(chord['name'], index, props.verseIndex)} style={(props.chordPlaying === index + (props.verseIndex * 4)) ? {color: clickedColor, fontWeight: 700, fontSize: '34px'} : {backgroundColor: null}} >
                         {chord['name']}
                     </li>
                 )
@@ -32,7 +32,7 @@ const MusicPageChords = (props) => {
         //Returns unordered list of chordcomponents
         return (
             <>
-                <ul className={`w-full flex justify-evenly py-2 px-2 bg-teal-700/10 ${props.editMode && 'bg-teal-700/30'}`}>
+                <ul className={`w-full flex justify-evenly py-2 px-2 bg-sky-700/20 ${props.editMode && 'bg-sky-700/30'}`}>
                     {chordComponents}
                 </ul>
             </>
@@ -55,7 +55,7 @@ const MusicPageChords = (props) => {
                     <div className='px-6 py-2 bg-slate-700/40 flex gap-2'>
                         {props.chordReplacements.map((chordObj, index) => {
                             if (chordObj) {
-                                return <div key={chordObj['name'][0]} onClick={() => props.changeChord(selectedChord['verseIndex'], selectedChord['chordIndex'], index)} className='z-30 p-2 bg-teal-600/30 hover:bg-teal-400/50 font-montserrat text-lg'>
+                                return <div key={chordObj['name'][0]} onClick={() => props.changeChord(selectedChord['verseIndex'], selectedChord['chordIndex'], index)} className='z-30 p-2 bg-sky-600/30 hover:bg-sky-400/50 font-montserrat text-lg'>
                                 {chordObj['name'][0]}
                                     </div>
                             } else {
