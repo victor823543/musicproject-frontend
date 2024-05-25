@@ -8,19 +8,23 @@ import CloseButtonWhite from '../../assets/icons/close-button-white.svg'
 import { useNavigate } from 'react-router-dom'
 
 const SideBar = ({isOpen, closeSidebar, navObject, isAuthenticated, logout, themeComponent}) => {
-    
+    const navigate = useNavigate()
+    const handleLoginClick = () => {
+        closeSidebar()
+        navigate('/login')
+    }
     return (
-        <div className={`fixed inset-y-0 right-0 bg-zinc-100 dark:bg-black w-64 h-fit p-4 z-40 ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`fixed inset-y-0 right-0 bg-zinc-100 dark:bg-black w-64 h-fit p-4 z-[100] ${isOpen ? 'block' : 'hidden'}`}>
             <ul className=' flex flex-col gap-6'>
                 {Object.entries(navObject).map(([name, route], index) =>
                     <li key={index}>
-                    <Link to={route} onClick={closeSidebar} className=' text-gray-700 dark:text-gray-200 hover:text-teal-800 dark:hover:text-teal-500 font-sans text-xl'>{name}</Link>
+                    <Link to={route} onClick={closeSidebar} className=' text-gray-700 dark:text-gray-200 hover:text-sky-800 dark:hover:text-sky-400 font-sans text-xl'>{name}</Link>
                 </li>
                 )}
                 {isAuthenticated ? 
                     <button onClick={logout} className='bg-slate-200 px-4 py-2 text-sm font-light rounded-lg ring-1 ring-slate-400 '>Log Out</button>
                     :
-                    <button onClick={() => navigate('/login')} className='bg-slate-200 px-4 py-2 text-sm font-light rounded-lg ring-1 ring-slate-400'>Log In</button>
+                    <button onClick={handleLoginClick} className='bg-slate-200 px-4 py-2 text-sm font-light rounded-lg ring-1 ring-slate-400'>Log In</button>
                 }
                 <div>{themeComponent}</div>
             </ul>
@@ -54,13 +58,13 @@ const NavBar = (props) => {
     const navItems = {'Home': '/', 'Create music': '/music', 'Ear Training': '/eartraining'}
 
     return (
-        <header className='fixed w-full py-5 px-4 z-40 bg-zinc-100/60 dark:bg-black/40 backdrop-blur-sm'>
+        <header className='fixed w-full py-5 px-4 z-[100] bg-zinc-100/60 dark:bg-black/40 backdrop-blur-sm'>
             <nav className='flex justify-between items-center'>
-                <a href="/" className=' font-montserrat font-bold text-xl dark:text-teal-200'>LearnMusic</a>
+                <a href="/" className=' font-montserrat font-bold text-xl dark:text-sky-300'>LearnMusic</a>
                 <ul className='flex justify-center items-center gap-12 max-lg:hidden'>
                     {Object.entries(navItems).map(([name, route], index) => 
                             <li key={index}>
-                                <Link to={route} className=' text-gray-700 dark:text-gray-200 hover:text-teal-800 dark:hover:text-teal-500 font-montserrat font-light text-lg'>{name}</Link>
+                                <Link to={route} className=' text-gray-700 dark:text-gray-200 hover:text-sky-800 dark:hover:text-sky-400 font-montserrat font-light text-lg'>{name}</Link>
                             </li>
                         )}
                 </ul>

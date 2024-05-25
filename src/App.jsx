@@ -10,13 +10,21 @@ import MusicPage from './components/MusicPage/MusicPage';
 import EarTraining from './components/EarTraining/EarTraining';
 import './App.css';
 import {Route, Routes, useNavigate} from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useAuthentication from './hooks/useAuthentication';
+import useUsername from './hooks/useUsername';
 
 function App() {
   const navigate = useNavigate()
   const [song, setSong] = useState(null)
-  const { isAuthenticated, loading, username, refreshAuthentication } = useAuthentication()
+  const { isAuthenticated, loading, refreshAuthentication } = useAuthentication()
+  const { username, fetchUsername } = useUsername()
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      fetchUsername()
+    }
+  }, [isAuthenticated])
 
   const handleAuthentication = () => {
     refreshAuthentication()
@@ -63,8 +71,8 @@ function App() {
         <Route path='/eartraining/*' element={
           <EarTraining/>
         } />
-        <Route path='login' element={<LoginPage handleAuthentication={refreshAuthentication}/>}/>
-        
+        <Route path='login' element={<LoginPage handleAuthentication={refreshAuthentication} start='login'/>}/>
+        <Route path='signup' element={<LoginPage handleAuthentication={refreshAuthentication} start='signup'/>}/>
       </Routes>
           
     </div>
