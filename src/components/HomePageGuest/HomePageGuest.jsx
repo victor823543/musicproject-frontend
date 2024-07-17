@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import StartSection from './StartSection'
-import IntroductionProgress from './IntroductionProgress'
 import CreateIntroduction from './IntroStep1.jsx/CreateIntroduction'
 import ProgressBorder from './components/ProgressBorder'
 

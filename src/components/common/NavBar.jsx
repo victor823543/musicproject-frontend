@@ -6,6 +6,7 @@ import HamburgerWhiteIcon from '../../assets/icons/burger-menu-white.svg'
 import CloseButton from '../../assets/icons/close-button.svg'
 import CloseButtonWhite from '../../assets/icons/close-button-white.svg'
 import { useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const SideBar = ({isOpen, closeSidebar, navObject, isAuthenticated, logout, themeComponent}) => {
     const navigate = useNavigate()
@@ -14,12 +15,21 @@ const SideBar = ({isOpen, closeSidebar, navObject, isAuthenticated, logout, them
         navigate('/login')
     }
     return (
-        <div className={`fixed inset-y-0 right-0 bg-zinc-100 dark:bg-black w-64 h-fit p-4 z-[100] ${isOpen ? 'block' : 'hidden'}`}>
+        <motion.div className={`fixed inset-y-0 right-0 rounded-bl-lg bg-zinc-100 dark:bg-black w-64 h-fit p-4 z-[100]`}
+            initial={{x: '100%'}}
+            animate={{x: 0}}
+            exit={{x: '100%'}}
+            transition={{duration: 0.15, type: 'tween', ease: 'easeIn'}}
+        >
             <ul className=' flex flex-col gap-6'>
                 {Object.entries(navObject).map(([name, route], index) =>
-                    <li key={index}>
-                    <Link to={route} onClick={closeSidebar} className=' text-gray-700 dark:text-gray-200 hover:text-sky-800 dark:hover:text-sky-400 font-sans text-xl'>{name}</Link>
-                </li>
+                    <motion.li key={index}
+                        initial={{x: 30}}
+                        animate={{x: 0}}
+                        transition={{delay: (index * 0.05) + 0.1, type: 'spring', duration: 0.5}}
+                    >
+                        <Link to={route} onClick={closeSidebar} className=' text-gray-700 dark:text-gray-200 hover:text-sky-800 dark:hover:text-sky-400 font-sans text-xl'>{name}</Link>
+                    </motion.li>
                 )}
                 {isAuthenticated ? 
                     <button onClick={logout} className='bg-slate-200 px-4 py-2 text-sm font-light rounded-lg ring-1 ring-slate-400 '>Log Out</button>
@@ -33,7 +43,7 @@ const SideBar = ({isOpen, closeSidebar, navObject, isAuthenticated, logout, them
                 <img src={CloseButtonWhite} alt="Close" width={50} height={50} className='hidden dark:block'/>
             </div>
             
-        </div>
+        </motion.div>
     )
 }
 
@@ -84,7 +94,11 @@ const NavBar = (props) => {
                 </div>
 
             </nav>
-            <SideBar isOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} navObject={navItems} isAuthenticated={props.isAuthenticated} logout={props.logout} themeComponent={<ToggleTheme mode={lightMode} toggle={toggleDarkMode}/>} />
+            <AnimatePresence>
+            {sidebarOpen &&    
+                <SideBar isOpen={sidebarOpen} closeSidebar={() => setSidebarOpen(false)} navObject={navItems} isAuthenticated={props.isAuthenticated} logout={props.logout} themeComponent={<ToggleTheme mode={lightMode} toggle={toggleDarkMode}/>} /> 
+            }
+            </AnimatePresence>
         </header>
     )
 }

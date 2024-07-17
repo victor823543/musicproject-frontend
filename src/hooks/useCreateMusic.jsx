@@ -57,6 +57,7 @@ const useCreateMusic = () => {
             'quality': paramsOut['quality'],
             'length': song['length'],
             'chords': song['chords'],
+            'chord_objects': song['chord_objects'],
             'oldKey': song['key'],
         }
 
