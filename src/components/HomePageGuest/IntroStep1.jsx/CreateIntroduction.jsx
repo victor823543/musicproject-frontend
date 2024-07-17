@@ -8,7 +8,7 @@ import IntroTextBox from "../IntroTextBox"
 import { motion } from "framer-motion"
 import { useNavigate } from "react-router-dom"
 
-const CreateIntroduction = ({currentStep, nextStep}) => {
+const CreateIntroduction = ({currentStep, nextStep, authenticated=false}) => {
     const navigate = useNavigate()
     const {
         song,
@@ -90,12 +90,24 @@ const CreateIntroduction = ({currentStep, nextStep}) => {
                         className="absolute flex flex-col items-center gap-3 p-10 max-sm:p-6 m-2 z-50 dark:text-white text-lg text-center bg-white dark:bg-slate-900 border border-zinc-300 dark:border-slate-800 shadow-xl dark:shadow-lg dark:shadow-sky-200/20 font-montserrat rounded-xl"
                         initial={{y: 30, opacity: 0}}
                         animate={{y: 0, opacity: 1}}
-                    >
-                        <p>You are now ready to generate songs and practice playing over chords. <br /> Continue as guest or create an account <span className="text-xl font-bold text-sky-500 border-b border-sky-700">FOR FREE</span>  to access all features.</p>
-                        <div className="flex justify-center gap-5 flex-wrap">
-                            <button onClick={() => navigate('/signup')} className="btn-s">CREATE ACCOUNT</button>
-                            <button onClick={() => navigate('/music')} className="btn-s">CONTINUE AS GUEST</button>
-                        </div>
+                    >   
+                        {authenticated ? 
+                            <>
+                                <p>You are now ready to generate songs and practice playing over chords.</p>
+                                <div className="flex justify-center">
+                                    <button onClick={() => navigate('/music')} className="btn-s">START PRACTICING</button>
+                                </div>
+                            </>
+                            :
+                            <>
+                                <p>You are now ready to generate songs and practice playing over chords. <br /> Continue as guest or create an account <span className="text-xl font-bold text-sky-500 border-b border-sky-700">FOR FREE</span>  to access all features.</p>
+                                <div className="flex justify-center gap-5 flex-wrap">
+                                    <button onClick={() => navigate('/signup')} className="btn-s">CREATE ACCOUNT</button>
+                                    <button onClick={() => navigate('/music')} className="btn-s">CONTINUE AS GUEST</button>
+                                </div>
+                            </>
+                            
+                        }
                         <p className=" text-2xl">OR...</p>
                         <p>Explore the ear-training section</p>
                         <button onClick={() => navigate('/eartraining')} className="btn-s">EAR TRAINING</button>
@@ -137,7 +149,7 @@ const CreateIntroduction = ({currentStep, nextStep}) => {
                     <div className='lg:w-1/2'>
                         <div className={`${currentStep === 6 && 'z-40'} relative`}>
                             <MusicPageKeyboard showChord={showChord}/>
-                            <IntroTextBox key={6} active={currentStep === 6} width='w-3/4' position='top-full'>
+                            <IntroTextBox key={6} active={currentStep === 6} width='w-3/4' position='lg:top-full max-lg:bottom-full'>
                                 The Chord is now displayed on the piano...
                             </IntroTextBox>
                         </div>
@@ -163,7 +175,7 @@ const CreateIntroduction = ({currentStep, nextStep}) => {
                                 <IntroTextBox key={8} active={currentStep === 8} width='w-3/4' position='top-0'>
                                     You can also select to include advanced chords by pressing SHOW ADVANCED SETTINGS followed by CREATE NEW...
                                 </IntroTextBox>
-                                <IntroTextBox key={9} active={currentStep === 9} width='w-3/4' position='bottom-full'>
+                                <IntroTextBox hideOnClick key={9} active={currentStep === 9} width='w-3/4' position='top-1/2'>
                                     Lastly, you can transpose any song by only changing the key and pressing TRANSPOSE SONG...
                                 </IntroTextBox>
                             </div>

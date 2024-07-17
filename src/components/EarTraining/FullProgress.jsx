@@ -56,7 +56,7 @@ const FullProgress = (props) => {
 
 
     return (
-        <div className='fixed inset-0 cover bg-slate-700/40 flex flex-col justify-center items-center dark:text-sky-200/80 pt-20 max-sm:p-0'>
+        <div className='fixed inset-0 cover bg-slate-700/40 flex flex-col justify-center items-center dark:text-sky-200/80 pt-20 max-sm:p-0 z-10'>
             
             <div className='relative max-sm:w-screen bg-zinc-200 dark:bg-slate-950 p-20 flex max-sm:justify-center sm:rounded-xl shadow-xl overflow-scroll hideScrollbar'>
                 <div className='max-lg:hidden flex flex-col items-start'>
